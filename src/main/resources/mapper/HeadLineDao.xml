@@ -2,8 +2,8 @@
 <!DOCTYPE mapper
     PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
     "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.wanjuanshu.o2o.dao.HeadLineDao">
-	<select id="queryHeadLine" resultType="com.wanjuanshu.o2o.entity.HeadLine">
+<mapper namespace="com.wanjuanshu.dao.HeadLineDao">
+	<select id="queryHeadLine" resultType="com.wanjuanshu.entity.HeadLine">
 		SELECT
 		line_id,
 		line_name,
@@ -23,7 +23,7 @@
 		ORDER BY
 		priority DESC
 	</select>
-	<select id="queryHeadLineById" resultType="com.wanjuanshu.o2o.entity.HeadLine">
+	<select id="queryHeadLineById" resultType="com.wanjuanshu.entity.HeadLine">
 		SELECT
 		line_id,
 		line_name,
@@ -38,7 +38,7 @@
 		WHERE
 		line_id = #{lineId}
 	</select>
-	<select id="queryHeadLineByIds" resultType="com.wanjuanshu.o2o.entity.HeadLine"
+	<select id="queryHeadLineByIds" resultType="com.wanjuanshu.entity.HeadLine"
 		parameterType="long">
 		SELECT
 		line_id,
@@ -67,7 +67,7 @@
 		(#{lineName},#{lineLink},#{lineImg},#{priority},
 		#{enableStatus},#{createTime},#{lastEditTime})
 	</insert>
-	<update id="updateHeadLine" parameterType="com.wanjuanshu.o2o.entity.HeadLine">
+	<update id="updateHeadLine" parameterType="com.wanjuanshu.entity.HeadLine">
 		update tb_head_line
 		<set>
 			<if test="lineName != null">line_name=#{lineName},</if>

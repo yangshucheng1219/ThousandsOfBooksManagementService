@@ -2,8 +2,8 @@
 <!DOCTYPE mapper
     PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
     "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.wanjuanshu.o2o.dao.PersonInfoDao">
-	<select id="queryPersonInfoList" resultType="com.wanjuanshu.o2o.entity.PersonInfo">
+<mapper namespace="com.wanjuanshu.dao.PersonInfoDao">
+	<select id="queryPersonInfoList" resultType="com.wanjuanshu.entity.PersonInfo">
 		SELECT
 		user_id,
 		name,
@@ -46,7 +46,7 @@
 			</if>
 		</where>
 	</select>
-	<select id="queryPersonInfoById" resultType="com.wanjuanshu.o2o.entity.PersonInfo"
+	<select id="queryPersonInfoById" resultType="com.wanjuanshu.entity.PersonInfo"
 		parameterType="Long">
 		SELECT
 		user_id,
@@ -63,7 +63,7 @@
 		WHERE
 		user_id = #{userId}
 	</select>
-	<insert id="insertPersonInfo" parameterType="com.wanjuanshu.o2o.entity.PersonInfo"
+	<insert id="insertPersonInfo" parameterType="com.wanjuanshu.entity.PersonInfo"
 		useGeneratedKeys="true" keyProperty="userId" keyColumn="user_id">
 		INSERT
 		INTO
@@ -73,7 +73,7 @@
 		(#{name},#{gender},#{email},#{profileImg},
 		#{userType},#{createTime},#{lastEditTime},#{enableStatus})
 	</insert>
-	<update id="updatePersonInfo" parameterType="com.wanjuanshu.o2o.entity.PersonInfo">
+	<update id="updatePersonInfo" parameterType="com.wanjuanshu.entity.PersonInfo">
 		update tb_person_info
 		<set>
 			<if test="name != null">name=#{name},</if>

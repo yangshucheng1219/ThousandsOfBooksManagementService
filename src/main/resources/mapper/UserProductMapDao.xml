@@ -2,28 +2,28 @@
 <!DOCTYPE mapper
     PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
     "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.wanjuanshu.o2o.dao.UserProductMapDao">
-	<resultMap id="userProductResultMap" type="com.wanjuanshu.o2o.entity.UserProductMap">
+<mapper namespace="com.wanjuanshu.dao.UserProductMapDao">
+	<resultMap id="userProductResultMap" type="com.wanjuanshu.entity.UserProductMap">
 		<id column="user_product_id" property="userProductId" />
 		<result column="create_time" property="createTime" />
 		<result column="point" property="point" />
 		<association property="user" column="user_id"
-			javaType="com.wanjuanshu.o2o.entity.PersonInfo">
+			javaType="com.wanjuanshu.entity.PersonInfo">
 			<id column="user_id" property="userId" />
 			<result column="name" property="name" />
 		</association>
 		<association property="product" column="product_id"
-			javaType="com.wanjuanshu.o2o.entity.Product">
+			javaType="com.wanjuanshu.entity.Product">
 			<id column="product_id" property="productId" />
 			<result column="product_name" property="productName" />
 		</association>
 		<association property="shop" column="shop_id"
-			javaType="com.wanjuanshu.o2o.entity.Shop">
+			javaType="com.wanjuanshu.entity.Shop">
 			<id column="shop_id" property="shopId" />
 			<result column="shop_name" property="shopName" />
 		</association>
 		<association property="operator" column="operator_id"
-			javaType="com.wanjuanshu.o2o.entity.PersonInfo">
+			javaType="com.wanjuanshu.entity.PersonInfo">
 			<id column="operator_id" property="userId" />
 			<result column="operator_name" property="name" />
 		</association>
@@ -144,7 +144,7 @@
 			</if>
 		</where>
 	</select>
-	<insert id="insertUserProductMap" parameterType="com.wanjuanshu.o2o.entity.UserProductMap"
+	<insert id="insertUserProductMap" parameterType="com.wanjuanshu.entity.UserProductMap"
 		useGeneratedKeys="true" keyProperty="userProductId" keyColumn="user_product_id">
 		INSERT
 		INTO

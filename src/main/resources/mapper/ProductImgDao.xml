@@ -2,8 +2,8 @@
 <!DOCTYPE mapper
     PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
     "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.wanjuanshu.o2o.dao.ProductImgDao">
-	<select id="queryProductImgList" resultType="com.wanjuanshu.o2o.entity.ProductImg">
+<mapper namespace="com.wanjuanshu.dao.ProductImgDao">
+	<select id="queryProductImgList" resultType="com.wanjuanshu.entity.ProductImg">
 		SELECT
 		product_img_id,
 		img_addr,

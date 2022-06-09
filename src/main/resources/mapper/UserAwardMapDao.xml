@@ -2,29 +2,29 @@
 <!DOCTYPE mapper
     PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
     "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.wanjuanshu.o2o.dao.UserAwardMapDao">
-	<resultMap id="userAwardResultMap" type="com.wanjuanshu.o2o.entity.UserAwardMap">
+<mapper namespace="com.wanjuanshu.dao.UserAwardMapDao">
+	<resultMap id="userAwardResultMap" type="com.wanjuanshu.entity.UserAwardMap">
 		<id column="user_award_id" property="userAwardId" />
 		<result column="create_time" property="createTime" />
 		<result column="used_status" property="usedStatus" />
 		<result column="point" property="point" />
 		<association property="user" column="user_id"
-			javaType="com.wanjuanshu.o2o.entity.PersonInfo">
+			javaType="com.wanjuanshu.entity.PersonInfo">
 			<id column="user_id" property="userId" />
 			<result column="name" property="name" />
 		</association>
 		<association property="award" column="award_id"
-			javaType="com.wanjuanshu.o2o.entity.Award">
+			javaType="com.wanjuanshu.entity.Award">
 			<id column="award_id" property="awardId" />
 			<result column="award_name" property="awardName" />
 		</association>
 		<association property="shop" column="shop_id"
-			javaType="com.wanjuanshu.o2o.entity.Shop">
+			javaType="com.wanjuanshu.entity.Shop">
 			<id column="shop_id" property="shopId" />
 			<result column="shop_name" property="shopName" />
 		</association>
 		<association property="operator" column="operator_id"
-			javaType="com.wanjuanshu.o2o.entity.PersonInfo">
+			javaType="com.wanjuanshu.entity.PersonInfo">
 			<id column="operator_id" property="userId" />
 			<result column="operator_name" property="name" />
 		</association>
@@ -207,7 +207,7 @@
 		user_award_id =
 		#{userAwardId}
 	</select>
-	<insert id="insertUserAwardMap" parameterType="com.wanjuanshu.o2o.entity.UserAwardMap"
+	<insert id="insertUserAwardMap" parameterType="com.wanjuanshu.entity.UserAwardMap"
 		useGeneratedKeys="true" keyProperty="userAwardId" keyColumn="user_award_id">
 		INSERT
 		INTO
@@ -217,7 +217,7 @@
 		(#{user.userId},#{award.awardId},#{shop.shopId},#{operator.userId},
 		#{createTime},#{usedStatus},#{point})
 	</insert>
-	<update id="updateUserAwardMap" parameterType="com.wanjuanshu.o2o.entity.UserAwardMap"
+	<update id="updateUserAwardMap" parameterType="com.wanjuanshu.entity.UserAwardMap"
 		useGeneratedKeys="true" keyProperty="userAwardId" keyColumn="user_award_id">
 		UPDATE
 		tb_user_award_map

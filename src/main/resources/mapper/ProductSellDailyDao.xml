@@ -2,18 +2,18 @@
 <!DOCTYPE mapper
     PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
     "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.wanjuanshu.o2o.dao.ProductSellDailyDao">
-	<resultMap id="productSellDailyResultMap" type="com.wanjuanshu.o2o.entity.ProductSellDaily">
+<mapper namespace="com.wanjuanshu.dao.ProductSellDailyDao">
+	<resultMap id="productSellDailyResultMap" type="com.wanjuanshu.entity.ProductSellDaily">
 		<id column="product_sell_daily_id" property="productSellDailyId" />
 		<result column="create_time" property="createTime" />
 		<result column="total" property="total" />
 		<association property="product" column="product_id"
-			javaType="com.wanjuanshu.o2o.entity.Product">
+			javaType="com.wanjuanshu.entity.Product">
 			<id column="product_id" property="productId" />
 			<result column="product_name" property="productName" />
 		</association>
 		<association property="shop" column="shop_id"
-			javaType="com.wanjuanshu.o2o.entity.Shop">
+			javaType="com.wanjuanshu.entity.Shop">
 			<id column="shop_id" property="shopId" />
 			<result column="shop_name" property="shopName" />
 		</association>
@@ -66,7 +66,7 @@
 		</where>
 		order by psd.product_id, psd.create_time
 	</select>
-	<insert id="insertProductSellDaily" parameterType="com.wanjuanshu.o2o.entity.ProductSellDaily">
+	<insert id="insertProductSellDaily" parameterType="com.wanjuanshu.entity.ProductSellDaily">
 		INSERT
 		INTO
 		tb_product_sell_daily(product_id,shop_id,create_time,total)

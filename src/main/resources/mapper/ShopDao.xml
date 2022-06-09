@@ -2,8 +2,8 @@
 <!DOCTYPE mapper
     PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
     "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.wanjuanshu.o2o.dao.ShopDao">
-	<resultMap type="com.wanjuanshu.o2o.entity.Shop" id="shopMap">
+<mapper namespace="com.wanjuanshu.dao.ShopDao">
+	<resultMap type="com.wanjuanshu.entity.Shop" id="shopMap">
 		<id column="shop_id" property="shopId" />
 		<result column="shop_name" property="shopName" />
 		<result column="shop_desc" property="shopDesc" />
@@ -16,17 +16,17 @@
 		<result column="enable_status" property="enableStatus" />
 		<result column="advice" property="advice" />
 		<association property="area" column="area_id"
-			javaType="com.wanjuanshu.o2o.entity.Area">
+			javaType="com.wanjuanshu.entity.Area">
 			<id column="area_id" property="areaId" />
 			<result column="area_name" property="areaName" />
 		</association>
 		<association property="shopCategory" column="shop_category_id"
-			javaType="com.wanjuanshu.o2o.entity.ShopCategory">
+			javaType="com.wanjuanshu.entity.ShopCategory">
 			<id column="shop_category_id" property="shopCategoryId" />
 			<result column="shop_category_name" property="shopCategoryName" />
 		</association>
 		<association property="owner" column="user_id"
-			javaType="com.wanjuanshu.o2o.entity.PersonInfo">
+			javaType="com.wanjuanshu.entity.PersonInfo">
 			<id column="user_id" property="userId" />
 			<result column="name" property="name" />
 		</association>
@@ -179,7 +179,7 @@
 		#{shopDesc},#{shopAddr},#{phone},#{shopImg},#{priority},
 		#{createTime},#{lastEditTime}, #{enableStatus},#{advice})
 	</insert>
-	<update id="updateShop" parameterType="com.wanjuanshu.o2o.entity.Shop">
+	<update id="updateShop" parameterType="com.wanjuanshu.entity.Shop">
 		update tb_shop
 		<set>
 			<if test="shopName != null">shop_name=#{shopName},</if>

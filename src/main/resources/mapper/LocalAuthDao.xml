@@ -2,15 +2,15 @@
 <!DOCTYPE mapper
     PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
     "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.wanjuanshu.o2o.dao.LocalAuthDao">
-	<resultMap id="localAuthResultMap" type="com.wanjuanshu.o2o.entity.LocalAuth">
+<mapper namespace="com.wanjuanshu.dao.LocalAuthDao">
+	<resultMap id="localAuthResultMap" type="com.wanjuanshu.entity.LocalAuth">
 		<id column="local_auth_id" property="localAuthId" />
 		<result column="username" property="username" />
 		<result column="password" property="password" />
 		<result column="create_time" property="createTime" />
 		<result column="last_edit_time" property="lastEditTime" />
 		<association property="personInfo" column="user_id"
-			javaType="com.wanjuanshu.o2o.entity.PersonInfo">
+			javaType="com.wanjuanshu.entity.PersonInfo">
 			<id column="user_id" property="userId" />
 			<result column="name" property="name" />
 			<result column="gender" property="gender" />
@@ -82,7 +82,7 @@
 		l.user_id =
 		#{userId}
 	</select>
-	<insert id="insertLocalAuth" parameterType="com.wanjuanshu.o2o.entity.LocalAuth"
+	<insert id="insertLocalAuth" parameterType="com.wanjuanshu.entity.LocalAuth"
 		useGeneratedKeys="true" keyProperty="localAuthId" keyColumn="local_auth_id">
 		INSERT
 		INTO

@@ -2,18 +2,18 @@
 <!DOCTYPE mapper
     PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
     "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.wanjuanshu.o2o.dao.UserShopMapDao">
-	<resultMap id="userShopResultMap" type="com.wanjuanshu.o2o.entity.UserShopMap">
+<mapper namespace="com.wanjuanshu.dao.UserShopMapDao">
+	<resultMap id="userShopResultMap" type="com.wanjuanshu.entity.UserShopMap">
 		<id column="user_shop_id" property="userShopId" />
 		<result column="create_time" property="createTime" />
 		<result column="point" property="point" />
 		<association property="user" column="user_id"
-			javaType="com.wanjuanshu.o2o.entity.PersonInfo">
+			javaType="com.wanjuanshu.entity.PersonInfo">
 			<id column="user_id" property="userId" />
 			<result column="name" property="name" />
 		</association>
 		<association property="shop" column="shop_id"
-			javaType="com.wanjuanshu.o2o.entity.Shop">
+			javaType="com.wanjuanshu.entity.Shop">
 			<id column="shop_id" property="shopId" />
 			<result column="shop_name" property="shopName" />
 		</association>
@@ -135,7 +135,7 @@
 		usm.shop_id =
 		#{shopId}
 	</select>
-	<insert id="insertUserShopMap" parameterType="com.wanjuanshu.o2o.entity.UserShopMap"
+	<insert id="insertUserShopMap" parameterType="com.wanjuanshu.entity.UserShopMap"
 		useGeneratedKeys="true" keyProperty="userShopId" keyColumn="user_shop_id">
 		INSERT
 		INTO
@@ -145,7 +145,7 @@
 		(#{user.userId},#{shop.shopId},
 		#{createTime},#{point})
 	</insert>
-	<update id="updateUserShopMapPoint" parameterType="com.wanjuanshu.o2o.entity.UserShopMap"
+	<update id="updateUserShopMapPoint" parameterType="com.wanjuanshu.entity.UserShopMap"
 		keyProperty="user_shop_id" useGeneratedKeys="true">
 		UPDATE tb_user_shop_map
 		SET point=#{point}
