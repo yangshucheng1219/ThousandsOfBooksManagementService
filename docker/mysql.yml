@@ -1,0 +1,16 @@
+version: '2'
+services:
+  springbooto2o-mysql:
+    image: mysql:5.7.22
+    volumes:
+      - ./data/mysql/conf:/etc/mysql/conf.d
+      - ./data/mysql/data:/var/lib/mysql
+      - ../sql/o2o-2021_06_18_23_21_45.sql:/docker-entrypoint-initdb.d/o2o-2021_06_18_23_21_45.sql.sql
+    environment:
+      - MYSQL_USER=root
+      - MYSQL_ROOT_PASSWORD=123456
+      - MYSQL_DATABASE=o2o
+      - LANG=C.UTF-8
+    ports:
+      - 3306:3306
+    command: mysqld  --skip-ssl --character_set_server=utf8mb4 --sql_mode=""

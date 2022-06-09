@@ -1,0 +1,24 @@
+version: '2'
+services:
+  springbooto2o-mysql:
+    extends:
+      file: mysql.yml
+      service: springbooto2o-mysql
+    networks:
+      springbooto2o-net:
+        aliases:
+          - MASTER_DB_SERVER
+#          - SLAVE_DB_SERVER_1
+#          - SLAVE_DB_SERVER_2
+  springbooto2o-redis:
+    extends:
+      file: redis.yml
+      service: springbooto2o-redis
+    networks:
+      springbooto2o-net:
+        aliases:
+          - REDIS_SERVER
+
+networks:
+  springbooto2o-net:
+
