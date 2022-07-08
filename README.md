@@ -1,2 +1,2 @@
-﻿# 项目介绍
-万卷书校园知识交流管理系统用于促进现代信息技术与传统校园知识交流融合，推动校园里知识的传播与迭代，为校园中的学生提供方便快捷的知识交流的平台，加快学生之间的知识交流，让学生在不断交流中提高学术水平。该系统对于提升学生的知识竞争力也具有重要意义。该系统主要是为校园学生服务，为有一技之长且愿意分享的学生提供一个交流自身知识的平台。
+﻿# Project Introduce
+Wanwanshu campus knowledge exchange management system is used to promote the integration of modern information technology and traditional campus knowledge exchange, promote the dissemination and iteration of knowledge on campus, provide a convenient and fast knowledge exchange platform for students on campus, speed up the knowledge exchange between students, and let students improve their academic level in continuous communication. The system is also of great significance to enhance students' knowledge competitiveness. The system mainly serves campus students and provides a platform for students who have skills and are willing to share their knowledge.
